@@ -112,6 +112,11 @@ img {
     box-shadow: 5px 5px rgba(0,0,0,0.05);
 }
 
+/* Ocultar el enlace de GitHub */
+  .github-link {
+    display: none !important;
+  }
+
 /* audio */
 
 .playbutton {
