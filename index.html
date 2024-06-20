@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - marian</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html><head>
+<style>@media print {#ghostery-tracker-tally {display:none !important}}</style>
+
+        
+        <link rel="stylesheet" href="https://use.typekit.net/wkv7ziz.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/860e19f8d2.js"></script>
+  
+<link href="//solrainha.github.io/honeybee/honeybee.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+ <script> 
+        setInterval(showTime, 1000); 
+        function showTime() { 
+            let time = new Date(); 
+            let hour = time.getHours(); 
+            let min = time.getMinutes(); 
+            let sec = time.getSeconds(); 
+            am_pm = "AM"; 
+  
+            if (hour > 12) { 
+                hour -= 12; 
+                am_pm = "PM"; 
+            } 
+            if (hour == 0) { 
+                hr = 12; 
+                am_pm = "AM"; 
+            } 
+  
+            hour = hour < 10 ? "0" + hour : hour; 
+            min = min < 10 ? "0" + min : min; 
+            sec = sec < 10 ? "0" + sec : sec; 
+  
+            let currentTime = hour + ":"  
+                + min 
+  
+            document.getElementById("clock") 
+                .innerHTML = currentTime; 
+        } 
+  
+        showTime(); 
+    </script> 
+
+<script>
+
+(function($){
+
+$(document).ready(function(){
+
+$("[title]").style_my_tooltips({
+
+tip_follows_cursor:true,
+
+tip_delay_time:90,
+
+tip_fade_speed:600,
+
+attribute:"title"
+
+});
+
+});
+ 
+})(jQuery);
+
+</script> 
+
+<script>
+    console.clear();
+
+class musicPlayer {
+	constructor() {
+		this.play = this.play.bind(this);
+		this.playBtn = document.getElementById('play');
+		this.playBtn.addEventListener('click', this.play);
+		this.controlPanel = document.getElementById('control-panel');
+		this.infoBar = document.getElementById('info');
+	}
+
+	play() {
+		let controlPanelObj = this.controlPanel,
+		infoBarObj = this.infoBar
+		Array.from(controlPanelObj.classList).find(function(element){
+					return element !== "active" ? controlPanelObj.classList.add('active') : 		controlPanelObj.classList.remove('active');
+			});
+		
+		Array.from(infoBarObj.classList).find(function(element){
+					return element !== "active" ? infoBarObj.classList.add('active') : 		infoBarObj.classList.remove('active');
+			});
+	}
+}
+  
+const newMusicplayer = new musicPlayer();
+</script>
+
+
+<body class="tmblr-iframe-overlay tmblr-iframe-themed tmblr-iframe-compact"><iframe src="https://www.tumblr.com/dashboard/iframe?tumblelogName=springdoythemes&amp;src=https%3A%2F%2Fspringdoythemes.tumblr.com%2F#%7B%22searchQuery%22%3A%22%22%2C%22pushDown%22%3Atrue%2C%22useThemeColors%22%3Atrue%2C%22scrollHeader%22%3Afalse%2C%22themeHeaderImage%22%3A%22https%3A%2F%2F64.media.tumblr.com%2Fceb0aa9501fb5df65b643121e98aa573%2F88077d0adabddc63-ca%2Fs2048x3072%2F18b7b566c15e0dac5058efb0099cb50493a06d27.png%22%2C%22themeBackgroundColor%22%3A%22%23FAFAFA%22%2C%22themeTitleColor%22%3A%22%23444444%22%2C%22themeAccentColor%22%3A%22%23529ECC%22%2C%22isOpticaLike%22%3Afalse%2C%22shouldHideBlogSearchBar%22%3Afalse%7D" width="309" height="54" frameborder="0" scrolling="no" name="unified-controls" class="tmblr-iframe tmblr-iframe--unified-controls tmblr-iframe--loaded iframe-controls--desktop"></iframe><div class="ui_dialog_lock" style="display: none;"></div>
+
+<script>
+$(document).ready(function() {
+  
+  var $audio = $('iframe.tumblr_audio_player');
+  $audio.load(function() {
+    $(this).contents().find('head').append('<style type="text/css">' +
+      '.audio-player { background: transparent!important; color: #cec8dc !important; }' +
+      '.audio-player .audio-info .track-artist { color: #fff !important; }' +
+    '</style>');
+  });
+});
+
+
+function opentabs(evt, tabstabs) {
+
+  var i, tabcontent, tablinks;
+
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+
+  document.getElementById(tabstabs).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function openCity(evt, cityName) {
+
+  var i, tabcontent, tablinks;
+
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<script>
+        var text = document.getElementsByTagName('hh')[0];
+        text.innerHTML = '<span>' + text.innerHTML.split('').join('</span><span>') + '</span>';
+    </script>
+
+<a target="_blank" href="https://xat.me/birdy"><div class="cred"><div class="fas fa-heart" style="margin-top: 10px;" aria-hidden="true"></div></div></a>
+ 
+<div class="galaxy">
+
+<div class="bgim">
+
+<div style="position: absolute; z-index: 999; left: 400px; top:-10px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="238" viewBox="0 0 500 238"> <defs> <style> .cls-2 { fill: none; stroke: #cec8dc; stroke-width: 1px; fill-rule: evenodd; } </style> </defs> <path class="cls-2" d="M61-48S-4,57,85,72s136-29,157,52,74,147,206,76,161,44,161,44L481-131Z"></path> </svg>
+</div>
+
+<div style="position: absolute; top: 280px; left: -50px;">
+<svg xmlns="http://www.w3.org/2000/svg" width="424" height="287" viewBox="0 0 424 287"> <defs> <style> .cls-1 { fill: none; stroke:#b9b2cc; stroke-width: 1px; fill-rule: evenodd; } </style> </defs> <path class="cls-1" d="M15,15S168.686-41,188,68s156.776-.5,211,97,0,122,0,122L0,285Z"></path> </svg>    
+</div>
+</div>
+
+<div class="bola"></div>
+<div class="bola2"></div>
+
+<!--- phone --->
+<div class="pcase">
+<div class="phone">
+<div class="overlay">
+<div class="pcolor"></div>
+<div class="pthing"></div>
+<div class="compa">at&amp;t</div>
+<div class="picons">
+<span class="fas fa-signal" aria-hidden="true"></span>    
+<span class="fas fa-wifi" aria-hidden="true"></span>
+<span class="fas fa-battery-half" aria-hidden="true"></span>
+</div>
+<div class="pbut">
+<div class="timie"><p id="clock">03:59</p>
+<div class="psub">**DESBLOQUEAR**</div> 
+</div>
+<div class="cam"><span class="fas fa-camera" aria-hidden="true"></span></div>
+<div class="call"><span class="fas fa-phone" aria-hidden="true"></span></div>
+</div></div></div></div>
+<!--- end phone --->
+
+<!--- social --->
+<div class="sidie">
+<div class="soc">
+<a href="javascript:void(0)" class="linkie" onclick="openCity(event, 'ig')" title="mi amor 🎔"><span class="fab fa-instagram" aria-hidden="true"></span></a>
+</div>    
+
+<div class="soc">
+<a href="javascript:void(0)" class="linkie" onclick="openCity(event, 'pl')" title="música"><span class="fas fa-music" aria-hidden="true"></span></a>
+</div>
+
+<div class="soc">
+<a href="javascript:void(0)" class="linkie" onclick="openCity(event, 'sh')" title="amigos"><span class="fas fa-heart" aria-hidden="true"></span></a>
+</div>
+
+</div>
+
+<!--- end social ---->
+
+<!--- message ---->
+<div class="backie">
+<div class="sdc"></div>  
+<div class="sdb">
+<div class="sdd">"La puteria es el amor en amistad en llamas."</div></div>  
+<div class="typy">
+Marian está escribiendo...</div>
+<div class="lili">
+<div class="lilo">
+<img src="assets/marian2.png">  
+</div>
+</div>
+<div style="position: absolute; left: -25px; top: 15px;">
+<div class="lds-heart"><div class="fas fa-heart" aria-hidden="true"></div>
+</div>
+</div>
+<!--- end message --->
+
+
+
+
+<!--- instagram ---->
+
+<div id="pl" class="tabcontent">
+<div class="plist">
+<div class="pl1">
+<img src="assets/senalescover.jpg">    
+</div>
+<div class="pl2">
+<div class="pl3">'SEÑALES'</div>
+<div class="pl4">created by: Marian<b></b></div>
+<div style="width: auto; height: auto; margin-top: 15px;">
+<div class="pl6">escucha...</div>
+
+</div></div>
+<div class="pl8">
+ 
+<div style="float: right;">download <span style="font-size: 10px; margin-left: 6px;"><i class="fas fa-toggle-on" aria-hidden="true"></i></span></div>
+</div>
+<div class="pl9">
+  <center> <video width="250" height="150" autoplay controls><source src="assets/senales.mp4" type="video/mp4"></video> , <i style="
+    color: #ffffff7a;"></center>
+</div>
+
+
+</div> 
+</div>
+
+
+<!--- shipper: change each oc's info here! --->
+
+<div id="sh" class="tabcontent">
+
+<div class="insta">
+<div class="ship"><div style="height: 20px;"></div>
+
+<div class="occ" title="Mi amor, Ctz">
+<img src="assets/ctzz.png">    
+</div>   
+
+<div class="occ" title="Farruka">
+<img src="assets/farruka.png">    
+</div>   
+
+<div class="occ" title="Marta">
+<img src="assets/marta.png">    
+</div> 
+
+<div class="occ" title="May">
+<img src="assets/mayra.png">    
+</div>   
+
+<div class="occ" title="Morenis">
+<img src="assets/morenis.png">    
+</div>   
+
+<div class="occ" title="Perris">
+<img src="assets/perris.png">    
+</div>       
+
+</div>
+
+</div>
+</div>
+  
+  <!--- instagram ---->
+
+<div id="ig" class="tabcontent">
+
+<div class="insta">
+<div class="insti">
+<div class="inst">
+<img src="assets/marian2.png">    
+</div>
+<div class="instu">iMarian</div></div>
+<div class="inst1">
+<img src="assets/ctz.png">    
+</div> 
+<div class="inst2">
+<i class="far fa-comment" aria-hidden="true"></i>
+<i class="far fa-paper-plane" aria-hidden="true"></i>
+<div style="position: absolute; left: 250px;"><i class="far fa-bookmark" aria-hidden="true"></i></div></div> 
+<div class="inst4">
+<span class="inst5">Mi amor CTZ <a target="_blank" href="https://xat.me/iCTZ">❤</a></span><p></p></div> 
+<div class="inst6">
+<div class="lds-heart"><div class="fas fa-heart" aria-hidden="true"></div></div>   
+</div></div></div>
+
+<div id="index" class="tabcontent" style="display:block; z-index:1;">
+
+</div>
+</div>
+
+
+</div><div id="s-m-t-tooltip" style="position: absolute; display: none;"><div style="width: 100%; height: 100%;"></div></div><div id="xkit-notifications"></div><script nonce="">var add_tag = undefined;
+(function() {
+	var blogs = [];
+	try {
+		var models = Tumblr.dashboardControls.allTumblelogs;
+		models.filter(function(model) {
+			return model.attributes.hasOwnProperty("is_current");
+		}).forEach(function(model) {
+			blogs.push(model.attributes.name);
+		});
+	} catch (e) {} finally {
+		window.postMessage({
+			xkit_blogs: blogs
+		}, window.location.protocol + "//" + window.location.host);
+	}
+})();</script><script nonce="">var add_tag = {};
+(function fix_autoplaying_yanked_videos() {
+
+	if (!window._ || !window.jQuery) {
+		return;
+	}
+
+	if (_.get(window, "Tumblr.Prima.CrtPlayer")) {
+		window.Tumblr.Prima.CrtPlayer.prototype.onLoadedMetadata =
+		_.wrap(window.Tumblr.Prima.CrtPlayer.prototype.onLoadedMetadata,
+			function(wrapped, _event) {
+				if (!this.$el.is(":visible") || !jQuery.contains(document, this.$el[0])) {
+					if (!this.$el.find('video[src^="blob:"]').length) {
+						return true;
+					}
+				}
+				return wrapped.call(this, _event);
+			});
+	}
+
+	// unfortunately we're not fast enought to catch some
+	// CRT instances that are currently instantiated, so handle those differently
+	jQuery('video').parent().each(function() {
+		this.addEventListener('loadedmetadata', function(event) {
+			var $target = jQuery(event.target);
+			if (!$target.is(":visible") || !jQuery.contains(document, event.target)) {
+				event.stopPropagation();
+			}
+		}, true); // uses .parent() and capturing to preempt tumblr's js
+	});
+})();</script><script nonce="">var add_tag = {};
+(function fix_jk_scrolling() {
+	if (!window._ || !window.jQuery) {
+		return;
+	}
+
+	if (_.get(window, "Tumblr.KeyCommands.update_post_positions")) {
+		Tumblr.KeyCommands.update_post_positions = _.wrap(Tumblr.KeyCommands.update_post_positions,
+			function(wrapped, _event) {
+				wrapped.call(this);
+				this.post_positions = _.pick(this.post_positions,
+					function(scroll_pos, element_id) {
+						var element = jQuery("[data-pageable='" + element_id + "']");
+						return element.is(":visible") && element.height() > 0;
+					});
+			});
+	}
+})();</script><script nonce="">var add_tag = {"callback_nonce":0.5696517362927755};
+(async ({callback_nonce, args}) => {
+	try {
+		const return_value = await (async () => {
+			if (!window.tumblr) {
+				return null;
+			}
+			const cssMap = await window.tumblr.getCssMap();
+			return cssMap;
+		})(args);
+
+		window.postMessage({
+			xkit_callback_nonce: callback_nonce,
+			return_value,
+		}, window.location.protocol + "//" + window.location.host);
+	} catch (exception) {
+		window.postMessage({
+			xkit_callback_nonce: callback_nonce,
+			exception: JSON.stringify({
+				...exception,
+				message: exception.message,
+				stack: exception.stack,
+			}),
+		})
+	}
+})(add_tag)</script>
+  
+  
+  
+  
+</body></html>
+<!-- partial -->
+  
+</body>
+</html>
